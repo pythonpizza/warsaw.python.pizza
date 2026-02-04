@@ -1,4 +1,4 @@
-# ostrava.python.pizza
+# warsaw.python.pizza
 
 ## How to run it locally
 
@@ -9,3 +9,7 @@
 bun update
 bun run dev
 ```
+
+## Image attribution
+
+Image at `public/city.png` was taken from [this source](https://unsplash.com/photos/city-skyline-during-day-time-KWcQ6_dk_OM) and is free to use under [Unsplash License](https://unsplash.com/license). The author of the image is [Iwona Castiello d'Antonio](https://aquadrata.com/).

@@ -8,7 +8,7 @@ export const Schedule = () => (
     <Heading>Program</Heading>
 
     <Paragraph>
-      We would like to thank everyone who submitted their proposals! We are now compiling the final version of the event schedule.
+      The full schedule will be announced soon! Stay tuned for exciting Python talks and presentations.
     </Paragraph>
 
     {SCHEDULE.map((schedule, index) => (

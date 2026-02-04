@@ -2,12 +2,11 @@ import { Container, Heading, Paragraph } from "theme-ui";
 
 export const About = () => (
   <Container id="about" variant="smallContainer">
-    <Heading>Python Pizza is Coming to Ostrava!</Heading>
+    <Heading>Python Pizza is Coming to Warsaw!</Heading>
     <Paragraph>
       <b>Python Pizza</b>, an annual micro conference originating from Naples in
-      2017, has made its mark in various cities in Germany, Italy, Cuba, as well
-      as in remote formats. Now, after Prague, and Brno it&apos;s Ostrava&apos;s turn for
-      Python Pizza to happen in Czechia.
+      2017, has made its mark in various cities in Germany, Italy, Cuba, Czechia, as well
+      as in remote formats. Now it&apos;s Warsaw&apos;s turn to host this amazing Python community event!
     </Paragraph>
     <br />
     <Paragraph>
@@ -30,6 +29,14 @@ export const About = () => (
     <br />
     <Paragraph>
       Check out the past editions:{" "}
+      <a
+        href="https://ostrava.python.pizza"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Ostrava Python Pizza
+      </a>
+      ,{" "}
       <a
         href="https://prague.python.pizza"
         target="_blank"

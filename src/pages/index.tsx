@@ -23,13 +23,13 @@ const Home = () => (
         content={genericInformation.socialDescription}
       />
       <meta name="twitter:site" content="@pythonpizzaconf" />
-      <meta property="og:image" content="https://ostrava.python.pizza/social-image.jpg" />
+      <meta property="og:image" content="https://warsaw.python.pizza/social-image.jpg" />
       <meta name="twitter:image:alt" content="Conference logo" />
-      <meta name="twitter:title" content="Ostrava Python Pizza Conference!!" />
-      <meta name="twitter:image" content="https://ostrava.python.pizza/social-image.jpg" />
+      <meta name="twitter:title" content="Warsaw Python Pizza Conference!!" />
+      <meta name="twitter:image" content="https://warsaw.python.pizza/social-image.jpg" />
       <meta
         name="twitter:description"
-        content="Join the fun 🥳🎉🍕 on 21st February 2026"
+        content="Join the fun 🥳🎉🍕 on 18th April 2026"
       />
       <meta name="photo-attribution" content="Photo by --todo (--url todo)" />
     </Head>

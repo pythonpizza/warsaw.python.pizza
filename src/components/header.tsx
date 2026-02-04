@@ -153,7 +153,7 @@ export const Header = () => (
         <MenuLink href="#venue">Venue 🏰</MenuLink>
         <MenuLink href="#sponsors">Sponsors 💛</MenuLink>
         <MenuLink href="#coc">CoC 💂</MenuLink>
-        <MenuButton href="https://pretix.eu/pyconcz/ostravapizza/">Tickets 🎫</MenuButton>
+        <MenuButton href="#">Tickets coming soon 🎫</MenuButton>
       </Flex>
     </Container>
   </Box>

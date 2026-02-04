@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsxImportSource theme-ui */
 import { format } from "date-fns";
-import { Box, Card, Heading, jsx, Link, Text } from "theme-ui";
+import { Box, Card, Heading, Link, Text, jsx } from "theme-ui";
 
 import type { Event } from "~/data/schedule";
 
@@ -135,7 +135,6 @@ export const ScheduleCard: React.FC<Props> = ({
           color: variant === "info" ? ["text", "white"] : "text",
         }}
       >
-
         {format(new Date(schedule.when), "HH:mm")}
       </Text>
     )}

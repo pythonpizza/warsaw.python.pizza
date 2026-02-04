@@ -31,7 +31,7 @@ export const Hero = () => (
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      background: "url(ostrava.jpg) center / cover",
+      background: "url(city.png) center / cover",
       minHeight: "100vh",
       position: "relative",
       pt: ["52rem", "20rem", "14rem"],

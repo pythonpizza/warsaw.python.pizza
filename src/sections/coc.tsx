@@ -46,7 +46,7 @@ export const Coc = () => (
       sx={{
         pl: 20,
         "li::marker": {
-          content: '"✅"',
+          content: '"✅ "',
           pr: 3,
           pt: 1,
           display: "inline-block",
@@ -79,7 +79,7 @@ export const Coc = () => (
       sx={{
         pl: 20,
         "li::marker": {
-          content: '"❌"',
+          content: '"❌ "',
           pr: 3,
           pt: 1,
           display: "inline-block",
@@ -147,7 +147,7 @@ export const Coc = () => (
       <a
         rel="noopener noreferrer"
         target="_blank"
-        href="mailto: frenzy.madness@gmail.com?subject=[Code of Conduct]"
+        href="mailto: warsawpythonpizza@gmail.com?subject=[Code of Conduct]"
       >
         email
       </a>

@@ -1,8 +1,8 @@
 export const genericInformation = {
-  pageTitle: "Python Pizza Ostrava",
-  socialDescription: "Python Pizza Ostrava, join us @ Impact Hub Ostrava, Sokolská tř. 1263/24 on 21st February 2026",
-  siteHeading: "Ostrava Python Pizza",
-  subHeading: "Impact Hub Ostrava, Sokolská tř. 1263/24",
-  whenDatetime: "2026/02/21 10:00 AM UTC",
+  pageTitle: "Warsaw Python Pizza",
+  socialDescription: "Warsaw Python Pizza, join us in Warsaw on 18th April 2026",
+  siteHeading: "Warsaw Python Pizza",
+  subHeading: "Warsaw, Poland - Venue TBD",
+  whenDatetime: "2026/04/18 10:00 AM UTC+2",
   whenFormat: "do MMMM y",
 };
