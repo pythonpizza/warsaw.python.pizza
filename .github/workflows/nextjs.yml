@@ -2,7 +2,7 @@
 #
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
-name: Deploy Ostrava Pizza to Pages
+name: Deploy Warsaw Pizza to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -25,7 +25,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BASE_PATH: '/ostrava.python.pizza'
+  BASE_PATH: '/warsaw.python.pizza'
 
 jobs:
   # Build job
@@ -42,7 +42,7 @@ jobs:
       #     node-version: "20"
       #     cache: ${{ steps.detect-package-manager.outputs.manager }}
 #      - name: Set Environment Variables
-#        run: echo "BASE_PATH=/ostrava.python.pizza" >> $GITHUB_ENV
+#        run: echo "BASE_PATH=/warsaw.python.pizza" >> $GITHUB_ENV
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:

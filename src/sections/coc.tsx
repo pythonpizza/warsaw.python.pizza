@@ -17,7 +17,7 @@ export const Coc = () => (
     </Heading>
     <CocHeading as="h2">Purpose</CocHeading>
     <Paragraph>
-      Ostrava Python Pizza is dedicated to providing a harassment-free conference
+      Warsaw Python Pizza is dedicated to providing a harassment-free conference
       experience for everyone, regardless of gender, gender identity and
       expression, sexual orientation, disability, physical appearance, body
       size, race, age, religion or lack thereof.{" "}
@@ -141,8 +141,8 @@ export const Coc = () => (
     <Paragraph>We value your attendance.</Paragraph>
     <CocHeading as="h2">Reporting steps</CocHeading>
     <Paragraph>
-      The Ostrava Python Pizza Team is here to help attendees feel safe for the
-      duration of Ostrava Python Pizza event. We value your participation. If you
+      The Warsaw Python Pizza Team is here to help attendees feel safe for the
+      duration of Warsaw Python Pizza event. We value your participation. If you
       need to report an incident please reach out to the Team via{" "}
       <a
         rel="noopener noreferrer"
