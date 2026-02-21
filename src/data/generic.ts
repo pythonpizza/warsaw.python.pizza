@@ -1,8 +1,8 @@
 export const genericInformation = {
   pageTitle: "Warsaw Python Pizza",
-  socialDescription: "Warsaw Python Pizza, join us in Warsaw on 18th April 2026",
+  socialDescription: "Warsaw Python Pizza, join us in Warsaw on 9th May 2026",
   siteHeading: "Warsaw Python Pizza",
   subHeading: "Warsaw, Poland - Venue TBD",
-  whenDatetime: "2026/04/18 10:00 AM UTC+2",
+  whenDatetime: "2026/05/09 10:00 AM UTC+2",
   whenFormat: "do MMMM y",
 };
