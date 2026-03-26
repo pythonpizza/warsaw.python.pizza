@@ -4,4 +4,25 @@ export type Organizer = {
   index: number;
 };
 
-export const ORGANIZERS: Organizer[] = [];
+export const ORGANIZERS: Organizer[] = [
+  {
+    name: "Piotr Gredowski",
+    image: "/organizers/piotr-gredowski.jpeg",
+    index: 1,
+  },
+  {
+    name: "Dorota Ostrowska",
+    image: "/organizers/dorota-ostrowska.jpeg",
+    index: 2,
+  },
+  {
+    name: "Natalia Traczewska",
+    image: "/organizers/natalia-traczewska.jpg",
+    index: 3,
+  },
+  {
+    name: "Data Science Club PJATK",
+    image: "/organizers/dsc-pjatk.png",
+    index: 4,
+  },
+];
