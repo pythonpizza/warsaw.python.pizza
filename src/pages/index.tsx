@@ -6,6 +6,7 @@ import { Header } from "~/components/header";
 import { genericInformation } from "~/data/generic";
 import { About } from "~/sections/about";
 import { CFP_Closed } from "~/sections/cfp_closed";
+import { CFP } from "~/sections/cfp";
 import { Coc } from "~/sections/coc";
 import { Hero } from "~/sections/hero";
 import { OrganizerSection } from "~/sections/organizers";
@@ -29,7 +30,7 @@ const Home = () => (
       <meta name="twitter:image" content="https://warsaw.python.pizza/social-image.jpg" />
       <meta
         name="twitter:description"
-        content="Join the fun 🥳🎉🍕 on 9th May 2026"
+        content="Join the fun 🥳🎉🍕 on May 9, 2026"
       />
       <meta name="photo-attribution" content="Photo by --todo (--url todo)" />
       <script
@@ -73,6 +74,7 @@ const Home = () => (
     <Schedule />
     <OrganizerSection />
     <Sponsors />
+    <CFP />
     {/* <CFP_Closed /> */}
     <Venue />
     <Coc />

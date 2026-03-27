@@ -4,10 +4,10 @@ import { ContentButton } from "~/components/header";
 
 export const CFP = () => (
   <Container id="cfp" variant="smallContainer">
-    <Heading>Call For Proposals is open until <s>31st December</s> 7th January</Heading>
+    <Heading>Call For Proposals is open until April 12 2026, 23:59 CET</Heading>
     <Paragraph>
       <a
-        href="https://forms.gle/ktaNSjRsrt6YcQEK9"
+        href="https://forms.gle/76iATyPAkA3fw2DDA"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -31,7 +31,7 @@ export const CFP = () => (
       inspire a new generation of 🐍 loving people!
     </Paragraph>
     <Box sx={{ m: "5rem" }}>
-      <ContentButton href="https://forms.gle/ktaNSjRsrt6YcQEK9">
+      <ContentButton href="https://forms.gle/76iATyPAkA3fw2DDA">
         Click here to send your Proposal
       </ContentButton>
     </Box>{" "}
