@@ -16,6 +16,6 @@ export const SCHEDULE: Event[] = [
   {
     label: "TBD",
     title: "Schedule coming soon! 🍕",
-    when: "2026-05-09T17:00:00+02:00",
+    when: "2026-05-09T18:00:00+02:00",
   },
 ];
