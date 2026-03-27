@@ -32,6 +32,39 @@ const Home = () => (
         content="Join the fun 🥳🎉🍕 on 9th May 2026"
       />
       <meta name="photo-attribution" content="Photo by --todo (--url todo)" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ConferenceEvent",
+            name: "Warsaw Python Pizza",
+            url: "https://warsaw.python.pizza",
+            startDate: "2026-05-09",
+            endDate: "2026-05-09",
+            location: {
+              "@type": "Place",
+              name: "PJAIT building A, Koszykowa 86",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Warsaw",
+                addressCountry: "PL",
+              },
+            },
+            hasParticipationOffer: {
+              "@type": "Offer",
+              name: "Call for Proposals",
+              url: "https://forms.gle/5pqj68ES9ENaGPBf6",
+              availabilityEnds: "2026-04-12",
+            },
+            hasSponsorshipOffer: {
+              "@type": "Offer",
+              name: "Sponsor Packages",
+              url: "https://warsaw.python.pizza/#sponsors",
+            },
+          }),
+        }}
+      />
     </Head>
     <Header />
     <Hero />
