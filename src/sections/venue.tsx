@@ -16,9 +16,7 @@ export const Venue = () => (
     <Heading sx={{ textAlign: "left" }}>Venue</Heading>
 
     <Paragraph>
-      📍 <b>PJAIT building A, Auditorium</b>
-      <br />
-      Koszykowa 86, Warsaw, Poland
+      📍 <b>PJAIT building A, Auditorium, Koszykowa 86, Warsaw, Poland</b>
       <br />
       <a
         href="https://maps.google.com/?q=Koszykowa+86,+Warsaw"
