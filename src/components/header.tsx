@@ -1,4 +1,3 @@
-import { type MouseEvent, useCallback } from "react";
 import { Box, Container, Flex, NavLink } from "theme-ui";
 
 import { Logo } from "./logo";
@@ -6,25 +5,6 @@ import { Logo } from "./logo";
 type LinkComponent = React.FC<{ href: string; children: React.ReactNode }>;
 
 const MenuLink: LinkComponent = ({ href, children }) => {
-  const goToSection = useCallback(
-    (e: MouseEvent) => {
-      e.preventDefault();
-
-      const destinationEl: HTMLElement | null =
-        window.document.querySelector(href);
-
-      if (!destinationEl) {
-        return;
-      }
-
-      window.scrollTo({
-        top: destinationEl.offsetTop,
-        behavior: "smooth",
-      });
-    },
-    [href],
-  );
-
   return (
     <NavLink
       sx={{
@@ -39,7 +19,6 @@ const MenuLink: LinkComponent = ({ href, children }) => {
       }}
       mt={["secondary", 0]}
       ml={[0, "secondary"]}
-      onClick={goToSection}
       href={href}
     >
       {children}
@@ -119,7 +98,7 @@ export const Header = () => (
       position: "absolute",
       top: 0,
       left: 0,
-      zIndex: 1,
+      zIndex: 10,
 
       width: "100%",
     }}

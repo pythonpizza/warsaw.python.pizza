@@ -11,6 +11,7 @@ const App = ({ Component, pageProps }: AppProps) => (
       styles={css`
         html {
           font-size: 62.5%;
+          scroll-behavior: smooth;
         }
         body {
           font-size: 2rem;
