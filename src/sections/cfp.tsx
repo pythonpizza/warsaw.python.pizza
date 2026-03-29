@@ -1,10 +1,13 @@
-import { Box, Container, Heading, Paragraph } from "theme-ui";
+import { Box, Container, Paragraph } from "theme-ui";
 
+import { AnchorHeading } from "~/components/anchor-heading";
 import { ContentButton } from "~/components/header";
 
 export const CFP = () => (
   <Container id="cfp" variant="smallContainer">
-    <Heading>Call For Proposals is open until April 12 2026, 23:59 CET</Heading>
+    <AnchorHeading anchor="cfp">
+      Call For Proposals is open until April 12 2026, 23:59 CET
+    </AnchorHeading>
     <Paragraph>
       <a
         href="https://forms.gle/76iATyPAkA3fw2DDA"

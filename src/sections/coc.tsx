@@ -1,6 +1,8 @@
 import { Container, Heading, Paragraph } from "theme-ui";
 import { jsx } from "theme-ui";
 
+import { AnchorHeading } from "~/components/anchor-heading";
+
 const CocHeading = ({ children, as }) => (
   <Heading
     as={as}
@@ -12,9 +14,9 @@ const CocHeading = ({ children, as }) => (
 
 export const Coc = () => (
   <Container id="coc" sx={{ textAlign: "left" }} variant="smallContainer">
-    <Heading sx={{ textAlign: "center" }} as="h1">
+    <AnchorHeading anchor="coc" sx={{ textAlign: "center" }} as="h1">
       Code of Conduct
-    </Heading>
+    </AnchorHeading>
     <CocHeading as="h2">Purpose</CocHeading>
     <Paragraph>
       Warsaw Python Pizza is dedicated to providing a harassment-free conference

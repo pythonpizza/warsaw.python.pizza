@@ -1,12 +1,17 @@
-import { Container, Heading, Paragraph } from "theme-ui";
+import { Container, Paragraph } from "theme-ui";
+
+import { AnchorHeading } from "~/components/anchor-heading";
 
 export const About = () => (
   <Container id="about" variant="smallContainer">
-    <Heading>Python Pizza is Coming to Warsaw!</Heading>
+    <AnchorHeading anchor="about">
+      Python Pizza is Coming to Warsaw!
+    </AnchorHeading>
     <Paragraph>
       <b>Python Pizza</b>, an annual micro conference originating from Naples in
-      2017, has made its mark in various cities in Germany, Italy, Cuba, Czechia, as well
-      as in remote formats. Now it&apos;s Warsaw&apos;s turn to host this amazing Python community event!
+      2017, has made its mark in various cities in Germany, Italy, Cuba,
+      Czechia, as well as in remote formats. Now it&apos;s Warsaw&apos;s turn to
+      host this amazing Python community event!
     </Paragraph>
     <br />
     <Paragraph>

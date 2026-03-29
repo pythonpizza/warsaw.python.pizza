@@ -1,10 +1,13 @@
-import { Container, Heading, Paragraph } from "theme-ui";
+import { Container, Paragraph } from "theme-ui";
 
+import { AnchorHeading } from "~/components/anchor-heading";
 import { ContentButton } from "~/components/header";
 
 export const Announcements = () => (
   <Container id="announcements" variant="smallContainer">
-    <Heading>Sign up for important announcements</Heading>
+    <AnchorHeading anchor="announcements">
+      Sign up for important announcements
+    </AnchorHeading>
     <Paragraph>
       If you&apos;re interested in receiving notifications about our schedule or
       ticket sales, please fill in the linked form. You will receive only four

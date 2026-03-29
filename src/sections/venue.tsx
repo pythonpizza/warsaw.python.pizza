@@ -1,5 +1,6 @@
-import { Box, Container, Grid, Heading, Paragraph } from "theme-ui";
+import { Box, Container, Grid, Paragraph } from "theme-ui";
 
+import { AnchorHeading } from "~/components/anchor-heading";
 import { Image } from "~/components/image";
 
 const venuePhotos = [
@@ -13,7 +14,9 @@ const venuePhotos = [
 
 export const Venue = () => (
   <Container id="venue" variant="smallContainer" sx={{ textAlign: "left" }}>
-    <Heading sx={{ textAlign: "left" }}>Venue</Heading>
+    <AnchorHeading anchor="venue" sx={{ textAlign: "center" }}>
+      Venue
+    </AnchorHeading>
 
     <Paragraph>
       📍 <b>PJAIT building A, Auditorium, Koszykowa 86, Warsaw, Poland</b>

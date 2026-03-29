@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Heading } from "theme-ui";
+import { Container } from "theme-ui";
 
+import { AnchorHeading } from "~/components/anchor-heading";
 import Speaker from "./speaker";
 
 const speakersData = [
@@ -21,7 +22,7 @@ const speakersData = [
 export const SpeakersSection = () => {
   return (
     <Container id="keynote" variant="smallContainer">
-      <Heading>Keynote speakers</Heading>
+      <AnchorHeading anchor="keynote">Keynote speakers</AnchorHeading>
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         {speakersData.map((speaker) => (
           <Speaker

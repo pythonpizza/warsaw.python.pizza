@@ -1,14 +1,16 @@
-import {Container, Heading, Paragraph} from "theme-ui";
+import { Container, Paragraph } from "theme-ui";
 
+import { AnchorHeading } from "~/components/anchor-heading";
 import { ScheduleCard } from "~/components/schedule-card";
 import { SCHEDULE } from "~/data/schedule";
 
 export const Schedule = () => (
   <Container id="schedule" variant="smallContainer">
-    <Heading>Program</Heading>
+    <AnchorHeading anchor="schedule">Program</AnchorHeading>
 
     <Paragraph>
-      The full schedule will be announced soon! Stay tuned for exciting Python talks and presentations.
+      The full schedule will be announced soon! Stay tuned for exciting Python
+      talks and presentations.
     </Paragraph>
 
     {SCHEDULE.map((schedule, index) => (

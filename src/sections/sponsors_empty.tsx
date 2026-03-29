@@ -1,10 +1,15 @@
-import { Container, Heading, Paragraph } from "theme-ui";
+import { Container, Paragraph } from "theme-ui";
+
+import { AnchorHeading } from "~/components/anchor-heading";
 
 export const Sponsors = () => (
   <Container id="sponsors">
-    <Heading mb="primary">Sponsors</Heading>
+    <AnchorHeading anchor="sponsors" mb="primary">
+      Sponsors
+    </AnchorHeading>
     <Paragraph>
-      We are looking for sponsors for Warsaw Python Pizza! If you are interested, please{" "}
+      We are looking for sponsors for Warsaw Python Pizza! If you are
+      interested, please{" "}
       <a
         rel="noopener noreferrer"
         target="_blank"

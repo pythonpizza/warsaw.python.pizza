@@ -1,5 +1,6 @@
-import { Container, Grid, Heading, jsx } from "theme-ui";
+import { Container, Grid, jsx } from "theme-ui";
 
+import { AnchorHeading } from "~/components/anchor-heading";
 import { Image } from "~/components/image";
 import { type Sponsor, SPONSORS } from "~/data/sponsors";
 
@@ -26,7 +27,9 @@ export const SponsorItem: React.FC<SponsorProps> = ({ sponsor }) => (
 
 export const Sponsors = () => (
   <Container id="sponsors">
-    <Heading mb="primary">Sponsors</Heading>
+    <AnchorHeading anchor="sponsors" mb="primary">
+      Sponsors
+    </AnchorHeading>
     <Grid columns={[1, 2, 2, 3]} gap="primary">
       {SPONSORS.map((sponsor) => (
         <SponsorItem key={sponsor.name} sponsor={sponsor} />
