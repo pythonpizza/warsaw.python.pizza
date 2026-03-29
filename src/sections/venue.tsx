@@ -1,4 +1,6 @@
-import { Box, Container, Grid, Heading, Paragraph } from "theme-ui";
+import { Container, Grid, Heading, Paragraph } from "theme-ui";
+
+import { Image } from "~/components/image";
 
 const venuePhotos = [
   "/venue/pjatk-outside-1.jpeg",
@@ -18,16 +20,12 @@ export const Venue = () => (
 
     <Grid columns={1} gap={3} sx={{ mt: "secondary" }}>
       {venuePhotos.map((photo, index) => (
-        <Box
+        <Image
           key={photo}
-          as="img"
           src={photo}
           alt={`PJAIT venue photo ${index + 1}`}
-          sx={{
-            width: "100%",
-            height: "auto",
-            display: "block",
-          }}
+          width="100%"
+          sx={{ display: "block" }}
         />
       ))}
     </Grid>
