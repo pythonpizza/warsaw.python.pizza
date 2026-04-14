@@ -6,7 +6,7 @@ import { ContentButton } from "~/components/header";
 export const CFP = () => (
   <Container id="cfp" variant="smallContainer">
     <AnchorHeading anchor="cfp">
-      Call For Proposals is open until April 12 2026, 23:59 CET
+      Call For Proposals is open until the end of Tuesday, April 14 2026
     </AnchorHeading>
     <Paragraph>
       <a

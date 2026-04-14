@@ -27,7 +27,12 @@ export const OrganizerSection = () => {
       >
         <Grid columns={[2, 2, 2, 3]} gap="primary">
           {ORGANIZERS.map((org) => (
-            <Organizer key={org.index} name={org.name} image={org.image} />
+            <Organizer
+              key={org.index}
+              name={org.name}
+              image={org.image}
+              links={org.links}
+            />
           ))}
         </Grid>
       </div>
