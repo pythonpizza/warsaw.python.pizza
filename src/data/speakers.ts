@@ -1,4 +1,10 @@
-import { linkedInLink, type ProfileLink } from "./profile-links";
+import {
+  githubLink,
+  linkedInLink,
+  type ProfileLink,
+  twitterLink,
+  websiteLink,
+} from "./profile-links";
 
 export type Speaker = {
   name: string;
@@ -15,36 +21,59 @@ export const SPEAKERS = {
   "bartek-brak": {
     name: "Bartek Brak",
     image: "/speakers/bartosz_rychlicki.jpeg",
+    links: [githubLink("https://github.com/bartekbrak/")],
   },
   "yevhen-maltsev": {
     name: "Yevhen Maltsev",
     image: "/speakers/yevhen_maltsev.jpg",
-    links: [linkedInLink("https://www.linkedin.com/in/yevhen-maltsev-990500296")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/yevhen-maltsev-990500296"),
+      githubLink("https://github.com/maltsevmki"),
+    ],
   },
   "vladyslav-fedoriuk": {
     name: "Vladyslav Fedoriuk",
     image: "/speakers/vlad_fedoriuk.jpeg",
-    links: [linkedInLink("https://www.linkedin.com/in/vladyslav-fedoriuk")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/vladyslav-fedoriuk"),
+      githubLink("https://github.com/vladfedoriuk"),
+    ],
   },
   "jonas-cicenas": {
     name: "Jonas Cicenas",
     image: "/speakers/jonas_cicenas.jpg",
-    links: [linkedInLink("https://www.linkedin.com/in/jonascicenas/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/jonascicenas/"),
+      githubLink("https://github.com/JNK5a"),
+      twitterLink("https://x.com/jonuxc"),
+      websiteLink("https://mapkinases.eu/founder/"),
+    ],
   },
   "andrii-orlov": {
     name: "Andrii Orlov",
     image: "/speakers/Andrii_Orlov.jpg",
-    links: [linkedInLink("https://www.linkedin.com/in/orlan0045/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/orlan0045/"),
+      githubLink("https://github.com/andrii-harbour"),
+      twitterLink("https://x.com/orlan0045"),
+    ],
   },
   "krzysiek-wilczynski": {
     name: "Krzysiek Wilczyński",
     image: "/speakers/krzzysztof_wilczynski.jpeg",
-    links: [linkedInLink("https://www.linkedin.com/in/3sztof/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/3sztof/"),
+      githubLink("https://github.com/3sztof"),
+      websiteLink("https://3sztof.github.io/"),
+    ],
   },
   "dorota-ostrowska": {
     name: "Dorota Ostrowska",
     image: "/speakers/dorota_ostrowska.jpeg",
-    links: [linkedInLink("https://www.linkedin.com/in/ostrowska-dorota/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/ostrowska-dorota/"),
+      githubLink("https://github.com/dorota-ostrowska/"),
+    ],
   },
   "eliska-kosturova": {
     name: "Eliška Kosturová",
@@ -53,7 +82,11 @@ export const SPEAKERS = {
   "cyprian-gburek": {
     name: "Cyprian Gburek",
     image: "/speakers/cyprian_gburek.jpeg",
-    links: [linkedInLink("https://www.linkedin.com/in/cyprian-gburek/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/cyprian-gburek/"),
+      githubLink("https://github.com/SirCypkowskyy"),
+      websiteLink("https://gburek.dev/pl"),
+    ],
   },
   "mateusz-staniaszek": {
     name: "Mateusz Staniaszek",
@@ -63,12 +96,19 @@ export const SPEAKERS = {
   "szymon-cader": {
     name: "Szymon Cader",
     image: "/speakers/szymon_cader.png",
-    links: [linkedInLink("https://www.linkedin.com/in/szymon-cader/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/szymon-cader/"),
+      githubLink("https://github.com/nekeal/"),
+    ],
   },
   "timothy-hobbs": {
     name: "Timothy Hobbs",
     image: "/speakers/timothy_hobbs.png",
-    links: [linkedInLink("https://www.linkedin.com/in/timothy-hobbs-5a6a80229/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/timothy-hobbs-5a6a80229/"),
+      githubLink("https://github.com/timthelion/"),
+      websiteLink("https://hobbs.cz"),
+    ],
   },
   "marta-mulik-walczyna": {
     name: "Marta Mulik-Walczyna (Akademickie Biuro Karier)",
@@ -77,7 +117,10 @@ export const SPEAKERS = {
   "jakub-melzacki": {
     name: "Jakub Melzacki",
     image: "/speakers/jakub_melzacki.jpeg",
-    links: [linkedInLink("https://www.linkedin.com/in/jmelzacki/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/jmelzacki/"),
+      githubLink("https://github.com/melzak252"),
+    ],
   },
   "daniel-goliszewski": {
     name: "Daniel Goliszewski",
@@ -91,12 +134,19 @@ export const SPEAKERS = {
   "janusz-kamienski": {
     name: 'Janusz "Ivellios" Kamieński',
     image: "/speakers/janusz_kamienski.jpeg",
-    links: [linkedInLink("https://www.linkedin.com/in/jakamienski/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/jakamienski/"),
+      githubLink("https://github.com/ivellios"),
+    ],
   },
   "jan-bielecki": {
     name: "Jan Bielecki",
     image: "/speakers/jan_bielecki.jpg",
-    links: [linkedInLink("https://www.linkedin.com/in/jan-bielecki/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/jan-bielecki/"),
+      githubLink("https://github.com/K4liber"),
+      websiteLink("https://k4liber.github.io/definit-dsa/"),
+    ],
   },
   "aleksandra-olszewska": {
     name: "Aleksandra Olszewska",
@@ -116,16 +166,29 @@ export const SPEAKERS = {
   "bartek-nowak": {
     name: 'Bartek "PokerFacowaty" Nowak',
     image: "/speakers/bartek_nowak.jpeg",
+    links: [
+      githubLink("https://github.com/PokerFacowaty"),
+      websiteLink("https://pokerfacowaty.com/"),
+    ],
   },
   "kinga-marszalkowska": {
     name: "Kinga Marszałkowska",
     image: "/speakers/kinga_marszalkowska.jpeg",
-    links: [linkedInLink("https://www.linkedin.com/in/kinga-marszałkowska-38b5391a9")],
+    links: [
+      linkedInLink(
+        "https://www.linkedin.com/in/kinga-marszałkowska-38b5391a9",
+      ),
+      githubLink("https://github.com/kinga-marszalkowska"),
+    ],
   },
   "sebastian-buczynski": {
     name: "Sebastian Buczyński",
     image: "/speakers/sebastian_buczynski.png",
-    links: [linkedInLink("https://www.linkedin.com/in/sebastianbuczynski/")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/sebastianbuczynski/"),
+      githubLink("https://github.com/Enforcer"),
+      websiteLink("https://breadcrumbscollector.tech/"),
+    ],
   },
 };
 

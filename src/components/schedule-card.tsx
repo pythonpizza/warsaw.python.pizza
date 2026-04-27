@@ -15,6 +15,20 @@ type Props = {
   schedule: Event;
 };
 
+const formatTime = (time: string) => format(new Date(time), "HH:mm");
+
+const formatTimeRange = ({ when, until }: Event) => {
+  if (!when) {
+    return null;
+  }
+
+  if (!until) {
+    return formatTime(when);
+  }
+
+  return `${formatTime(when)}-${formatTime(until)}`;
+};
+
 const TalkCard: React.FC<{
   invert: Props["invert"];
   schedule: Props["schedule"];
@@ -29,6 +43,10 @@ const TalkCard: React.FC<{
     <Card
       sx={{
         minHeight: "12.8rem",
+        border: schedule.isKeynote ? ".3rem solid #ed4337" : undefined,
+        boxShadow: schedule.isKeynote
+          ? "0 8px 32px -12px #ed4337"
+          : undefined,
         p: photos.length
           ? [
               "3.2rem 4rem 2rem",
@@ -105,6 +123,20 @@ const TalkCard: React.FC<{
           fontSize: ["smallBody", "body"],
         }}
       >
+        {schedule.isKeynote && (
+          <Text
+            sx={{
+              display: "inline-flex",
+              alignItems: "center",
+              color: "primary",
+              fontFamily: "heading",
+              fontSize: "smallBody",
+              fontWeight: "heading",
+            }}
+          >
+            Keynote speaker
+          </Text>
+        )}
         {speakers.map((speaker) => (
           <Text
             key={speaker.name}
@@ -201,23 +233,28 @@ export const ScheduleCard: React.FC<Props> = ({
     {variant === "talk" && <TalkCard schedule={schedule} invert={invert} />}
     {variant === "info" && <InfoCard schedule={schedule} />}
 
-    {schedule.when && (
+    {formatTimeRange(schedule) && (
       <Text
         key="when"
         sx={{
           position: "absolute",
-          top: ["-3rem", "50%"],
-          left: invert ? ["5rem", "2rem"] : ["5rem", "calc(100% - 2rem)"],
-          transform: [
-            null,
-            invert
-              ? "translateY(-50%) translateX(0)"
-              : "translateY(-50%) translateX(-100%)",
-          ],
-          color: variant === "info" ? ["text", "white"] : "text",
+          zIndex: 1,
+          top: 0,
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          px: "1rem",
+          py: ".35rem",
+          borderRadius: "999px",
+          backgroundColor: variant === "info" ? "white" : "primary",
+          boxShadow: "0 4px 16px -8px #464444",
+          color: variant === "info" ? "primary" : "white",
+          fontFamily: "heading",
+          fontSize: "smallBody",
+          lineHeight: 1,
+          whiteSpace: "nowrap",
         }}
       >
-        {format(new Date(schedule.when), "HH:mm")}
+        {formatTimeRange(schedule)}
       </Text>
     )}
   </Box>
