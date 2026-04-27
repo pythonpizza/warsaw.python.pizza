@@ -16,7 +16,7 @@ const HeroHeading: React.FC<HeroHeadingProps> = ({
   <Heading
     {...props}
     sx={{
-      fontSize: large ? "large" : "heading",
+      fontSize: large ? ["4.2rem", "large"] : ["2rem", "heading"],
       textAlign: "center",
       color: "white",
     }}
@@ -34,7 +34,7 @@ export const Hero = () => (
       background: "url(city.png) center / cover",
       minHeight: "100vh",
       position: "relative",
-      pt: ["52rem", "20rem", "14rem"],
+      pt: ["12rem", "20rem", "14rem"],
       "&:before": {
         content: '""',
         position: "absolute",
