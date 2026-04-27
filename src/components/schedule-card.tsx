@@ -42,32 +42,31 @@ const TalkCard: React.FC<{
   return (
     <Card
       sx={{
-        minHeight: "12.8rem",
+        minHeight: ["auto", "12.8rem"],
         border: schedule.isKeynote ? ".3rem solid #ed4337" : undefined,
-        boxShadow: schedule.isKeynote
-          ? "0 8px 32px -12px #ed4337"
-          : undefined,
+        borderRadius: ["3.2rem", "10rem"],
+        boxShadow: schedule.isKeynote ? "0 8px 32px -12px #ed4337" : undefined,
         p: photos.length
           ? [
-              "3.2rem 4rem 2rem",
+              "3rem 1.5rem 1.5rem",
               invert ? "2rem 17rem 2rem 10rem" : "2rem 10rem 2rem 17rem",
             ]
-          : ["2rem 4rem", "2rem 10rem"],
+          : ["2.4rem 1.5rem 1.5rem", "2rem 10rem"],
       }}
     >
       {photos.length > 0 && (
         <Box
           sx={{
             position: "absolute",
-            top: [0, "50%"],
-            left: invert ? ["50%", "auto"] : ["50%", 0],
-            right: invert ? ["50%", 0] : "auto",
-            transform: ["translate(-50%,-75%) scale(1)", "translateY(-50%)"],
-            display: "flex",
+            top: "50%",
+            left: invert ? "auto" : 0,
+            right: invert ? 0 : "auto",
+            transform: "translateY(-50%)",
+            display: ["none", "flex"],
             alignItems: "center",
             justifyContent: "center",
-            width: photos.length > 1 ? ["10rem", "14.4rem"] : undefined,
-            height: photos.length > 1 ? ["10rem", "14.4rem"] : undefined,
+            width: photos.length > 1 ? "14.4rem" : undefined,
+            height: photos.length > 1 ? "14.4rem" : undefined,
           }}
         >
           {photos.map((photo, index) => (
@@ -75,27 +74,51 @@ const TalkCard: React.FC<{
               key={photo}
               src={photo}
               sx={{
-                width: photos.length > 1 ? ["6rem", "10rem"] : undefined,
-                height: photos.length > 1 ? ["6rem", "10rem"] : undefined,
+                width: photos.length > 1 ? "10rem" : "14.4rem",
+                height: photos.length > 1 ? "10rem" : "14.4rem",
                 position: photos.length > 1 ? "absolute" : undefined,
                 top:
-                  photos.length > 1
-                    ? index === 0
-                      ? ["0.4rem", "0"]
-                      : ["3.6rem", "4.4rem"]
-                    : undefined,
+                  photos.length > 1 ? (index === 0 ? 0 : "4.4rem") : undefined,
                 left:
-                  photos.length > 1
-                    ? index === 0
-                      ? ["0.4rem", "0"]
-                      : ["3.6rem", "4.4rem"]
-                    : undefined,
+                  photos.length > 1 ? (index === 0 ? 0 : "4.4rem") : undefined,
                 zIndex: photos.length - index,
                 border: photos.length > 1 ? ".4rem solid white" : undefined,
                 boxShadow:
-                  photos.length > 1
-                    ? "2px 8px 24px -8px #ed4337"
-                    : undefined,
+                  photos.length > 1 ? "2px 8px 24px -8px #ed4337" : undefined,
+              }}
+            />
+          ))}
+        </Box>
+      )}
+
+      {photos.length > 0 && (
+        <Box
+          sx={{
+            display: ["flex", "none"],
+            alignItems: "center",
+            justifyContent: "center",
+            width: photos.length > 1 ? "7.2rem" : undefined,
+            height: photos.length > 1 ? "7.2rem" : undefined,
+            mb: "1rem",
+            position: "relative",
+          }}
+        >
+          {photos.map((photo, index) => (
+            <Avatar
+              key={photo}
+              src={photo}
+              sx={{
+                width: photos.length > 1 ? "4.8rem" : "6.4rem",
+                height: photos.length > 1 ? "4.8rem" : "6.4rem",
+                position: photos.length > 1 ? "absolute" : undefined,
+                top:
+                  photos.length > 1 ? (index === 0 ? 0 : "2.4rem") : undefined,
+                left:
+                  photos.length > 1 ? (index === 0 ? 0 : "2.4rem") : undefined,
+                zIndex: photos.length - index,
+                border: photos.length > 1 ? ".3rem solid white" : undefined,
+                boxShadow:
+                  photos.length > 1 ? "2px 8px 24px -8px #ed4337" : undefined,
               }}
             />
           ))}
@@ -107,8 +130,10 @@ const TalkCard: React.FC<{
         sx={{
           mt: 0,
           mb: ["1rem", ".5rem"],
-          fontSize: "body",
+          fontSize: ["1.7rem", "body"],
+          lineHeight: ["1.25", "heading"],
           color: "text",
+          overflowWrap: "break-word",
         }}
       >
         {schedule.title}
@@ -119,8 +144,9 @@ const TalkCard: React.FC<{
           display: "flex",
           justifyContent: "center",
           gap: ".75rem",
+          rowGap: ".35rem",
           flexWrap: "wrap",
-          fontSize: ["smallBody", "body"],
+          fontSize: ["1.35rem", "body"],
         }}
       >
         {schedule.isKeynote && (
@@ -145,6 +171,7 @@ const TalkCard: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               gap: ".4rem",
+              flexWrap: "wrap",
             }}
           >
             {speaker.name}
@@ -184,7 +211,8 @@ const TalkCard: React.FC<{
 const InfoCard: React.FC<{ schedule: Props["schedule"] }> = ({ schedule }) => (
   <Card
     sx={{
-      p: "2rem 10rem",
+      p: ["1.5rem 1.25rem", "2rem 10rem"],
+      borderRadius: ["2.4rem", "10rem"],
       backgroundColor: "primary",
       color: "white",
       backgroundImage: `linear-gradient(
@@ -211,7 +239,7 @@ const InfoCard: React.FC<{ schedule: Props["schedule"] }> = ({ schedule }) => (
   >
     <Text
       sx={{
-        fontSize: "body",
+        fontSize: ["smallBody", "body"],
       }}
     >
       {schedule.label}
@@ -223,39 +251,50 @@ export const ScheduleCard: React.FC<Props> = ({
   variant = "talk",
   invert = false,
   schedule,
-}) => (
-  <Box
-    sx={{
-      position: "relative",
-      mt: variant === "talk" ? ["9rem", "primary"] : "primary",
-    }}
-  >
-    {variant === "talk" && <TalkCard schedule={schedule} invert={invert} />}
-    {variant === "info" && <InfoCard schedule={schedule} />}
+}) => {
+  const hasPhotos = Boolean(
+    schedule.speakerIds?.some((id) => SPEAKERS[id]?.image),
+  );
 
-    {formatTimeRange(schedule) && (
-      <Text
-        key="when"
-        sx={{
-          position: "absolute",
-          zIndex: 1,
-          top: 0,
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          px: "1rem",
-          py: ".35rem",
-          borderRadius: "999px",
-          backgroundColor: variant === "info" ? "white" : "primary",
-          boxShadow: "0 4px 16px -8px #464444",
-          color: variant === "info" ? "primary" : "white",
-          fontFamily: "heading",
-          fontSize: "smallBody",
-          lineHeight: 1,
-          whiteSpace: "nowrap",
-        }}
-      >
-        {formatTimeRange(schedule)}
-      </Text>
-    )}
-  </Box>
-);
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        mt:
+          variant === "talk"
+            ? hasPhotos
+              ? ["3.2rem", "primary"]
+              : ["3rem", "primary"]
+            : ["3rem", "primary"],
+      }}
+    >
+      {variant === "talk" && <TalkCard schedule={schedule} invert={invert} />}
+      {variant === "info" && <InfoCard schedule={schedule} />}
+
+      {formatTimeRange(schedule) && (
+        <Text
+          key="when"
+          sx={{
+            position: "absolute",
+            zIndex: 1,
+            top: 0,
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            px: [".75rem", "1rem"],
+            py: ".35rem",
+            borderRadius: "999px",
+            backgroundColor: variant === "info" ? "white" : "primary",
+            boxShadow: "0 4px 16px -8px #464444",
+            color: variant === "info" ? "primary" : "white",
+            fontFamily: "heading",
+            fontSize: ["1.35rem", "smallBody"],
+            lineHeight: 1,
+            whiteSpace: "nowrap",
+          }}
+        >
+          {formatTimeRange(schedule)}
+        </Text>
+      )}
+    </Box>
+  );
+};

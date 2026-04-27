@@ -21,6 +21,7 @@ export const Image: React.FC<Props> = ({
   height,
   objectFit,
   layout,
+  sx,
   className,
 }) => {
   let finalWidth = width;
@@ -34,7 +35,7 @@ export const Image: React.FC<Props> = ({
     <img
       src={src}
       alt={alt}
-      sx={{ width: finalWidth, height: finalHeight, objectFit }}
+      sx={{ width: finalWidth, height: finalHeight, objectFit, ...sx }}
       className={className}
     />
   );

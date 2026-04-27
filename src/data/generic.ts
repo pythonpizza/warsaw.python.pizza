@@ -5,4 +5,5 @@ export const genericInformation = {
   subHeading: "PJAIT building A, Koszykowa 86, Warsaw, Poland",
   whenDatetime: "2026/05/09 10:00 AM UTC+2",
   whenFormat: "do MMMM y",
+  ticketsUrl: "https://pretix.eu/europython/warsaw-python-pizza/",
 };

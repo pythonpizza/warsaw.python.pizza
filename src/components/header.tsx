@@ -1,5 +1,7 @@
 import { Box, Container, Flex, NavLink } from "theme-ui";
 
+import { genericInformation } from "~/data/generic";
+
 import { Logo } from "./logo";
 
 type LinkComponent = React.FC<{ href: string; children: React.ReactNode }>;
@@ -132,8 +134,47 @@ export const Header = () => (
         <MenuLink href="#venue">Venue 🏰</MenuLink>
         <MenuLink href="#sponsors">Sponsors 💛</MenuLink>
         <MenuLink href="#coc">CoC 💂</MenuLink>
-        <MenuButton href="#">Tickets coming soon 🎫</MenuButton>
+        <MenuButton href={genericInformation.ticketsUrl}>
+          Buy tickets 🎫
+        </MenuButton>
       </Flex>
     </Container>
   </Box>
+);
+
+export const FloatingTicketsButton = () => (
+  <NavLink
+    href={genericInformation.ticketsUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{
+      position: "fixed",
+      right: ["1.2rem", "2rem"],
+      bottom: ["1.2rem", "2rem"],
+      zIndex: 20,
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      minWidth: ["13.6rem", "16rem"],
+      px: ["1.6rem", "2.4rem"],
+      py: ["1rem", "1.2rem"],
+      border: "1px solid white",
+      borderRadius: "10rem",
+      background: "primary",
+      boxShadow: "0.6rem 0.4rem 2.4rem -0.8rem rgba(25, 0, 0, 0.5)",
+      color: "white",
+      fontSize: ["smallBody", "body"],
+      fontWeight: "bold",
+      textAlign: "center",
+      transition: `transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+        box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1)`,
+      "&:hover, &:focus": {
+        color: "white",
+        transform: "translateY(-0.2rem)",
+        boxShadow: "0.8rem 0.6rem 3rem -0.8rem rgba(25, 0, 0, 0.6)",
+      },
+    }}
+  >
+    Buy tickets 🎫
+  </NavLink>
 );

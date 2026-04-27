@@ -8,8 +8,8 @@ export const CFP_Closed = () => (
       Proposals submission is now closed
     </AnchorHeading>
     <Paragraph>
-      We would like to thank everyone who submitted their proposals! We are now
-      compiling the final version of the event schedule.
+      We would like to thank everyone who submitted their proposals! We have
+      already created the final version of the event schedule.
     </Paragraph>
   </Container>
 );

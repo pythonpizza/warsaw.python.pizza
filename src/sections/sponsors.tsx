@@ -1,4 +1,4 @@
-import { Container, Grid, jsx } from "theme-ui";
+import { Container, Grid, Paragraph, jsx } from "theme-ui";
 
 import { AnchorHeading } from "~/components/anchor-heading";
 import { Image } from "~/components/image";
@@ -13,7 +13,7 @@ export const SponsorItem: React.FC<SponsorProps> = ({ sponsor }) => (
     href={sponsor.link}
     rel="noopener noreferrer"
     target="_blank"
-    sx={{ position: "relative" }}
+    sx={{ position: "relative", justifySelf: "center" }}
   >
     <Image
       width="14rem"
@@ -30,10 +30,31 @@ export const Sponsors = () => (
     <AnchorHeading anchor="sponsors" mb="primary">
       Sponsors
     </AnchorHeading>
-    <Grid columns={[1, 2, 2, 3]} gap="primary">
+    <Grid
+      columns={[
+        1,
+        Math.min(SPONSORS.length, 2),
+        Math.min(SPONSORS.length, 2),
+        Math.min(SPONSORS.length, 3),
+      ]}
+      gap="primary"
+      sx={{ justifyContent: "center", alignItems: "center" }}
+    >
       {SPONSORS.map((sponsor) => (
         <SponsorItem key={sponsor.name} sponsor={sponsor} />
       ))}
     </Grid>
+    <Paragraph sx={{ fontSize: "smallBody", mt: "secondary" }}>
+      We are looking for sponsors for Warsaw Python Pizza! If you are
+      interested, please{" "}
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="mailto:warsawpythonpizza@gmail.com?subject=[Sponsoring Warsaw Python Pizza]"
+      >
+        contact us!
+      </a>
+      .
+    </Paragraph>
   </Container>
 );

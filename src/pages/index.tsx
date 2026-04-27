@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Box } from "theme-ui";
 
 import { Footer } from "~/components/footer";
-import { Header } from "~/components/header";
+import { FloatingTicketsButton, Header } from "~/components/header";
 import { genericInformation } from "~/data/generic";
 import { About } from "~/sections/about";
 import { CFP_Closed } from "~/sections/cfp_closed";
@@ -64,6 +64,13 @@ const Home = () => (
               url: "https://forms.gle/5pqj68ES9ENaGPBf6",
               availabilityEnds: "2026-04-12",
             },
+            offers: {
+              "@type": "Offer",
+              name: "Tickets",
+              url: genericInformation.ticketsUrl,
+              availability: "https://schema.org/InStock",
+              validFrom: "2026-04-27",
+            },
             hasSponsorshipOffer: {
               "@type": "Offer",
               name: "Sponsor Packages",
@@ -74,6 +81,7 @@ const Home = () => (
       />
     </Head>
     <Header />
+    <FloatingTicketsButton />
     <Hero />
     <About />
     {/*<SpeakersSection />*/}
