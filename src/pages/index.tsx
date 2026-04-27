@@ -10,7 +10,7 @@ import { Coc } from "~/sections/coc";
 import { Hero } from "~/sections/hero";
 import { OrganizerSection } from "~/sections/organizers";
 import { Schedule } from "~/sections/schedule";
-import { Sponsors } from "~/sections/sponsors_empty";
+import { Sponsors } from "~/sections/sponsors";
 import { Venue } from "~/sections/venue";
 
 const Home = () => (

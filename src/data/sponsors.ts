@@ -4,4 +4,10 @@ export type Sponsor = {
   link: string;
 };
 
-export const SPONSORS: Sponsor[] = [];
+export const SPONSORS: Sponsor[] = [
+  {
+    name: "EuroPython Society",
+    image: "/sponsors/eps-text.png",
+    link: "https://www.europython-society.org/",
+  },
+];
