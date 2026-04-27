@@ -9,14 +9,14 @@ export const Schedule = () => (
     <AnchorHeading anchor="schedule">Program</AnchorHeading>
 
     <Paragraph>
-      The full schedule will be announced soon! Stay tuned for exciting Python
-      talks and presentations.
+      Join us for a full day of Python talks, coffee breaks, lightning talks,
+      and pizza.
     </Paragraph>
 
     {SCHEDULE.map((schedule, index) => (
       <ScheduleCard
         variant={schedule.label ? "info" : "talk"}
-        key={schedule.when}
+        key={`${schedule.when}-${schedule.title ?? schedule.label}`}
         schedule={schedule}
         invert={!(index % 2)}
       />

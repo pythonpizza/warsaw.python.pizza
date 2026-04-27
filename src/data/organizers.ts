@@ -1,8 +1,6 @@
-export type OrganizerLink = {
-  url: string;
-  icon: string;
-  label: string;
-};
+import { linkedInLink, type ProfileLink } from "./profile-links";
+
+export type OrganizerLink = ProfileLink;
 
 export type Organizer = {
   name: string;
@@ -16,37 +14,19 @@ export const ORGANIZERS: Organizer[] = [
     name: "Piotr Grędowski",
     image: "/organizers/piotr-gredowski.jpeg",
     index: 1,
-    links: [
-      {
-        url: "https://pl.linkedin.com/in/piotrgredowski",
-        icon: "/socials/linkedin.png",
-        label: "LinkedIn",
-      },
-    ],
+    links: [linkedInLink("https://pl.linkedin.com/in/piotrgredowski")],
   },
   {
     name: "Dorota Ostrowska",
     image: "/organizers/dorota-ostrowska.jpeg",
     index: 2,
-    links: [
-      {
-        url: "https://www.linkedin.com/in/ostrowska-dorota/",
-        icon: "/socials/linkedin.png",
-        label: "LinkedIn",
-      },
-    ],
+    links: [linkedInLink("https://www.linkedin.com/in/ostrowska-dorota/")],
   },
   {
     name: "Natalia Traczewska",
     image: "/organizers/natalia-traczewska.jpg",
     index: 3,
-    links: [
-      {
-        url: "https://pl.linkedin.com/in/natalia-traczewska",
-        icon: "/socials/linkedin.png",
-        label: "LinkedIn",
-      },
-    ],
+    links: [linkedInLink("https://pl.linkedin.com/in/natalia-traczewska")],
   },
   {
     name: "Data Science Club PJATK",

@@ -1,12 +1,13 @@
 /** @jsxRuntime classic */
 /** @jsxImportSource theme-ui */
 import { format } from "date-fns";
-import { Box, Card, Heading, Link, Text, jsx } from "theme-ui";
+import { Box, Card, Heading, Image, Link, Text, jsx } from "theme-ui";
 
 import type { Event } from "~/data/schedule";
+import type { Speaker } from "~/data/speakers";
+import { SPEAKERS } from "~/data/speakers";
 
 import { Avatar } from "./avatar";
-import { ExternalLinkIcon } from "./external-link-icon";
 
 type Props = {
   variant?: "talk" | "info";
@@ -18,27 +19,70 @@ const TalkCard: React.FC<{
   invert: Props["invert"];
   schedule: Props["schedule"];
 }> = ({ invert, schedule }) => {
-  const AuthorElement = schedule.link ? Link : Text;
+  const speakers: Speaker[] =
+    schedule.speakerIds?.map((id) => SPEAKERS[id]) ?? [];
+  const photos = speakers.flatMap((speaker) =>
+    speaker.image ? [speaker.image] : [],
+  );
+
   return (
     <Card
       sx={{
         minHeight: "12.8rem",
-        p: [
-          "3.2rem 4rem 2rem",
-          invert ? "2rem 17rem 2rem 10rem" : "2rem 10rem 2rem 17rem",
-        ],
+        p: photos.length
+          ? [
+              "3.2rem 4rem 2rem",
+              invert ? "2rem 17rem 2rem 10rem" : "2rem 10rem 2rem 17rem",
+            ]
+          : ["2rem 4rem", "2rem 10rem"],
       }}
     >
-      <Avatar
-        src={schedule.photo}
-        sx={{
-          position: "absolute",
-          top: [0, "50%"],
-          left: invert ? ["50%", "auto"] : ["50%", 0],
-          right: invert ? ["50%", 0] : "auto",
-          transform: ["translate(-50%,-75%) scale(1)", "translateY(-50%)"],
-        }}
-      />
+      {photos.length > 0 && (
+        <Box
+          sx={{
+            position: "absolute",
+            top: [0, "50%"],
+            left: invert ? ["50%", "auto"] : ["50%", 0],
+            right: invert ? ["50%", 0] : "auto",
+            transform: ["translate(-50%,-75%) scale(1)", "translateY(-50%)"],
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: photos.length > 1 ? ["10rem", "14.4rem"] : undefined,
+            height: photos.length > 1 ? ["10rem", "14.4rem"] : undefined,
+          }}
+        >
+          {photos.map((photo, index) => (
+            <Avatar
+              key={photo}
+              src={photo}
+              sx={{
+                width: photos.length > 1 ? ["6rem", "10rem"] : undefined,
+                height: photos.length > 1 ? ["6rem", "10rem"] : undefined,
+                position: photos.length > 1 ? "absolute" : undefined,
+                top:
+                  photos.length > 1
+                    ? index === 0
+                      ? ["0.4rem", "0"]
+                      : ["3.6rem", "4.4rem"]
+                    : undefined,
+                left:
+                  photos.length > 1
+                    ? index === 0
+                      ? ["0.4rem", "0"]
+                      : ["3.6rem", "4.4rem"]
+                    : undefined,
+                zIndex: photos.length - index,
+                border: photos.length > 1 ? ".4rem solid white" : undefined,
+                boxShadow:
+                  photos.length > 1
+                    ? "2px 8px 24px -8px #ed4337"
+                    : undefined,
+              }}
+            />
+          ))}
+        </Box>
+      )}
 
       <Heading
         as="h2"
@@ -52,17 +96,55 @@ const TalkCard: React.FC<{
         {schedule.title}
       </Heading>
 
-      <AuthorElement
-        rel="noopener noreferrer"
-        target="_blank"
-        href={schedule.link}
+      <Box
         sx={{
+          display: "flex",
+          justifyContent: "center",
+          gap: ".75rem",
+          flexWrap: "wrap",
           fontSize: ["smallBody", "body"],
         }}
       >
-        {schedule.name}
-        {schedule.link && <ExternalLinkIcon />}
-      </AuthorElement>
+        {speakers.map((speaker) => (
+          <Text
+            key={speaker.name}
+            sx={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: ".4rem",
+            }}
+          >
+            {speaker.name}
+            {speaker.links?.map((link) => (
+              <Link
+                key={`${speaker.name}-${link.url}`}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${speaker.name} ${link.label}`}
+                title={`${speaker.name} ${link.label}`}
+                sx={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  lineHeight: 0,
+                }}
+              >
+                <Image
+                  src={link.icon}
+                  alt={link.label}
+                  sx={{
+                    width: "16px",
+                    height: "16px",
+                    display: "block",
+                    filter: "brightness(0)",
+                  }}
+                />
+              </Link>
+            ))}
+          </Text>
+        ))}
+      </Box>
     </Card>
   );
 };
