@@ -42,65 +42,37 @@ const TalkCard: React.FC<{
   return (
     <Card
       sx={{
-        minHeight: ["auto", "12.8rem"],
+        minHeight: "auto",
         border: schedule.isKeynote ? ".3rem solid #ed4337" : undefined,
-        borderRadius: ["3.2rem", "10rem"],
+        borderRadius: ["3.2rem", "4rem"],
         boxShadow: schedule.isKeynote ? "0 8px 32px -12px #ed4337" : undefined,
+        display: photos.length ? ["flex", "grid"] : "flex",
+        gridTemplateColumns: photos.length
+          ? invert
+            ? `minmax(0, 1fr) ${photos.length > 1 ? "12rem" : "17rem"}`
+            : `${photos.length > 1 ? "12rem" : "17rem"} minmax(0, 1fr)`
+          : undefined,
+        columnGap: "2.4rem",
+        rowGap: "1rem",
+        alignItems: "center",
+        justifyItems: "center",
         p: photos.length
-          ? [
-              "3rem 1.5rem 1.5rem",
-              invert ? "2rem 17rem 2rem 10rem" : "2rem 10rem 2rem 17rem",
-            ]
-          : ["2.4rem 1.5rem 1.5rem", "2rem 10rem"],
+          ? ["3rem 1.5rem 1.6rem", "2.8rem 3rem 2.2rem"]
+          : ["2.4rem 1.5rem 1.5rem", "2.8rem 4rem 2.2rem"],
       }}
     >
       {photos.length > 0 && (
         <Box
           sx={{
-            position: "absolute",
-            top: "50%",
-            left: invert ? "auto" : 0,
-            right: invert ? 0 : "auto",
-            transform: "translateY(-50%)",
-            display: ["none", "flex"],
-            alignItems: "center",
-            justifyContent: "center",
-            width: photos.length > 1 ? "14.4rem" : undefined,
-            height: photos.length > 1 ? "14.4rem" : undefined,
-          }}
-        >
-          {photos.map((photo, index) => (
-            <Avatar
-              key={photo}
-              src={photo}
-              sx={{
-                width: photos.length > 1 ? "10rem" : "14.4rem",
-                height: photos.length > 1 ? "10rem" : "14.4rem",
-                position: photos.length > 1 ? "absolute" : undefined,
-                top:
-                  photos.length > 1 ? (index === 0 ? 0 : "4.4rem") : undefined,
-                left:
-                  photos.length > 1 ? (index === 0 ? 0 : "4.4rem") : undefined,
-                zIndex: photos.length - index,
-                border: photos.length > 1 ? ".4rem solid white" : undefined,
-                boxShadow:
-                  photos.length > 1 ? "2px 8px 24px -8px #ed4337" : undefined,
-              }}
-            />
-          ))}
-        </Box>
-      )}
-
-      {photos.length > 0 && (
-        <Box
-          sx={{
-            display: ["flex", "none"],
-            alignItems: "center",
-            justifyContent: "center",
-            width: photos.length > 1 ? "7.2rem" : undefined,
-            height: photos.length > 1 ? "7.2rem" : undefined,
-            mb: "1rem",
+            gridColumn: invert ? 2 : 1,
+            gridRow: "1 / span 2",
             position: "relative",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: photos.length > 1 ? ["7.2rem", "12rem"] : ["6.4rem", "15.2rem"],
+            height: photos.length > 1 ? ["7.2rem", "12rem"] : ["6.4rem", "15.2rem"],
+            mb: ["1rem", 0],
           }}
         >
           {photos.map((photo, index) => (
@@ -108,15 +80,15 @@ const TalkCard: React.FC<{
               key={photo}
               src={photo}
               sx={{
-                width: photos.length > 1 ? "4.8rem" : "6.4rem",
-                height: photos.length > 1 ? "4.8rem" : "6.4rem",
+                width: photos.length > 1 ? ["4.8rem", "8rem"] : ["6.4rem", "15.2rem"],
+                height: photos.length > 1 ? ["4.8rem", "8rem"] : ["6.4rem", "15.2rem"],
                 position: photos.length > 1 ? "absolute" : undefined,
                 top:
-                  photos.length > 1 ? (index === 0 ? 0 : "2.4rem") : undefined,
+                  photos.length > 1 ? (index === 0 ? 0 : ["2.4rem", "4rem"]) : undefined,
                 left:
-                  photos.length > 1 ? (index === 0 ? 0 : "2.4rem") : undefined,
+                  photos.length > 1 ? (index === 0 ? 0 : ["2.4rem", "4rem"]) : undefined,
                 zIndex: photos.length - index,
-                border: photos.length > 1 ? ".3rem solid white" : undefined,
+                border: photos.length > 1 ? [".3rem solid white", ".35rem solid white"] : undefined,
                 boxShadow:
                   photos.length > 1 ? "2px 8px 24px -8px #ed4337" : undefined,
               }}
@@ -128,6 +100,7 @@ const TalkCard: React.FC<{
       <Heading
         as="h2"
         sx={{
+          gridColumn: photos.length ? (invert ? 1 : 2) : undefined,
           mt: 0,
           mb: ["1rem", ".5rem"],
           fontSize: ["1.7rem", "body"],
@@ -141,6 +114,7 @@ const TalkCard: React.FC<{
 
       <Box
         sx={{
+          gridColumn: photos.length ? (invert ? 1 : 2) : undefined,
           display: "flex",
           justifyContent: "center",
           gap: ".75rem",
