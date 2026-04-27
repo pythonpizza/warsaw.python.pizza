@@ -41,6 +41,7 @@ const Home = () => (
       <meta name="photo-attribution" content="Photo by --todo (--url todo)" />
       <script
         type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD is generated from static event metadata.
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
