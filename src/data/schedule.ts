@@ -29,9 +29,7 @@ export const SCHEDULE: Event[] = [
     isKeynote: true,
   },
   {
-    title:
-      "On negative motivation for programming, on reputation and even neurodiversity.",
-    speakerIds: ["bartek-brak"],
+    title: "TBA",
     when: "2026-05-09T10:34:00+02:00",
     until: "2026-05-09T10:46:00+02:00",
   },
