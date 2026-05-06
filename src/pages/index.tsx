@@ -85,9 +85,9 @@ const Home = () => (
     <Hero />
     <About />
     {/*<SpeakersSection />*/}
+    <Sponsors />
     <Schedule />
     <OrganizerSection />
-    <Sponsors />
     <CFP_Closed />
     <Venue />
     <Coc />
