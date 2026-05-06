@@ -23,6 +23,11 @@ export const SPEAKERS = {
     image: "/speakers/bartosz_rychlicki.jpeg",
     links: [githubLink("https://github.com/bartekbrak/")],
   },
+  "agata-skamruk": {
+    name: "Agata Skamruk",
+    image: "/speakers/Agata_Skamruk.jpeg",
+    links: [linkedInLink("https://www.linkedin.com/in/agata-skamruk-785b44b1/")],
+  },
   "yevhen-maltsev": {
     name: "Yevhen Maltsev",
     image: "/speakers/yevhen_maltsev.jpg",

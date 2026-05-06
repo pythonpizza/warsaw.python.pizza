@@ -29,7 +29,8 @@ export const SCHEDULE: Event[] = [
     isKeynote: true,
   },
   {
-    title: "TBA",
+    title: "Catch Me If You __can__",
+    speakerIds: ["agata-skamruk"],
     when: "2026-05-09T10:34:00+02:00",
     until: "2026-05-09T10:46:00+02:00",
   },
