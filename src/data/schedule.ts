@@ -120,7 +120,7 @@ export const SCHEDULE: Event[] = [
     until: "2026-05-09T14:46:00+02:00",
   },
   {
-    title: "TBA",
+    title: "Why Your CV Isn't Working - 5 Common Mistakes IT Candidates Make",
     speakerIds: ["marta-mulik-walczyna"],
     when: "2026-05-09T14:46:00+02:00",
     until: "2026-05-09T14:58:00+02:00",
