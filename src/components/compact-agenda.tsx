@@ -54,10 +54,11 @@ const getReferenceTime = () => {
   );
 
   if (highlightTime) {
-    const normalizedHighlightTime = highlightTime.replace(
-      / (\d{2}:\d{2})$/,
-      "+$1",
-    );
+    const normalizedHighlightTime = highlightTime.match(
+      /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/,
+    )
+      ? highlightTime.replace(" ", "T")
+      : highlightTime.replace(/ (\d{2}:\d{2})$/, "+$1");
     const parsedTime = new Date(normalizedHighlightTime);
 
     if (!Number.isNaN(parsedTime.getTime())) {

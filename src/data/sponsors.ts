@@ -15,4 +15,9 @@ export const SPONSORS: Sponsor[] = [
     image: "/sponsors/netcompany-logotype-black-RGB.png",
     link: "https://www.netcompany.com/",
   },
+  {
+    name: "Polish-Japanese Academy of Information Technology",
+    image: "/sponsors/pjatk-logo.svg",
+    link: "https://pja.edu.pl/",
+  },
 ];
