@@ -1,4 +1,10 @@
-import { linkedInLink, type ProfileLink } from "./profile-links";
+import {
+  githubLink,
+  linkedInLink,
+  type ProfileLink,
+  twitterLink,
+  websiteLink,
+} from "./profile-links";
 
 export type OrganizerLink = ProfileLink;
 
@@ -14,7 +20,12 @@ export const ORGANIZERS: Organizer[] = [
     name: "Piotr Grędowski",
     image: "/organizers/piotr-gredowski.jpeg",
     index: 1,
-    links: [linkedInLink("https://pl.linkedin.com/in/piotrgredowski")],
+    links: [
+      linkedInLink("https://www.linkedin.com/in/piotrgredowski/"),
+      githubLink("https://github.com/piotrgredowski"),
+      twitterLink("https://x.com/piotrgredowski"),
+      websiteLink("https://gredowski.com"),
+    ],
   },
   {
     name: "Dorota Ostrowska",

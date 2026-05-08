@@ -80,9 +80,15 @@ export const SPEAKERS = {
       githubLink("https://github.com/dorota-ostrowska/"),
     ],
   },
-  "eliska-kosturova": {
-    name: "Eliška Kosturová",
-    image: "/speakers/eliska.jpeg",
+  "piotr-gredowski": {
+    name: "Piotr Grędowski",
+    image: "/organizers/piotr-gredowski.jpeg",
+    links: [
+      linkedInLink("https://www.linkedin.com/in/piotrgredowski/"),
+      githubLink("https://github.com/piotrgredowski"),
+      twitterLink("https://x.com/piotrgredowski"),
+      websiteLink("https://gredowski.com"),
+    ],
   },
   "cyprian-gburek": {
     name: "Cyprian Gburek",

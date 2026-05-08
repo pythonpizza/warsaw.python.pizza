@@ -83,9 +83,8 @@ export const SCHEDULE: Event[] = [
     until: "2026-05-09T12:46:00+02:00",
   },
   {
-    title:
-      "One Logic, Two Worlds: Unified Large-Scale Feature Engineering with Polars",
-    speakerIds: ["eliska-kosturova"],
+    title: "Let your coding agent speak with `speakup` tool",
+    speakerIds: ["piotr-gredowski"],
     when: "2026-05-09T12:46:00+02:00",
     until: "2026-05-09T12:58:00+02:00",
   },
