@@ -89,27 +89,27 @@ export const SCHEDULE: Event[] = [
     until: "2026-05-09T12:58:00+02:00",
   },
   {
+    label: "Pizza!",
+    when: "2026-05-09T12:58:00+02:00",
+    until: "2026-05-09T13:58:00+02:00",
+  },
+  {
     title: "Burn Your requirements.txt: The 10-Minute UV & Ruff Speedrun",
     speakerIds: ["cyprian-gburek"],
-    when: "2026-05-09T12:58:00+02:00",
-    until: "2026-05-09T13:10:00+02:00",
+    when: "2026-05-09T13:58:00+02:00",
+    until: "2026-05-09T14:10:00+02:00",
   },
   {
     title:
       "I am Python Engineer. How do I contribute to the Open Mercato - an open source Next.js ERP?",
     speakerIds: ["mateusz-staniaszek"],
-    when: "2026-05-09T13:10:00+02:00",
-    until: "2026-05-09T13:22:00+02:00",
+    when: "2026-05-09T14:10:00+02:00",
+    until: "2026-05-09T14:22:00+02:00",
   },
   {
     title: "Don't be scared when PostgreSQL Stops Using Your Indexes",
     speakerIds: ["szymon-cader"],
-    when: "2026-05-09T13:22:00+02:00",
-    until: "2026-05-09T13:34:00+02:00",
-  },
-  {
-    label: "Pizza!",
-    when: "2026-05-09T13:34:00+02:00",
+    when: "2026-05-09T14:22:00+02:00",
     until: "2026-05-09T14:34:00+02:00",
   },
   {
