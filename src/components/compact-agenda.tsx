@@ -153,7 +153,7 @@ export const CompactAgenda: React.FC<{
       sx={{
         listStyle: "none",
         display: "grid",
-        gap: ".4rem",
+        gap: [".6rem", ".4rem"],
         m: 0,
         p: 0,
       }}
@@ -173,14 +173,17 @@ export const CompactAgenda: React.FC<{
             }}
             sx={{
               display: "grid",
-              gridTemplateColumns: "4.2rem minmax(0, 1fr) auto",
+              gridTemplateColumns: [
+                "minmax(3.6rem, auto) minmax(0, 1fr) auto",
+                "4.2rem minmax(0, 1fr) auto",
+              ],
               gridTemplateRows: "auto auto",
               alignItems: "start",
-              gap: ".6rem",
-              rowGap: ".15rem",
+              columnGap: [".5rem", ".6rem"],
+              rowGap: [".45rem", ".15rem"],
               minHeight: 0,
-              px: ".75rem",
-              py: ".5rem",
+              px: [".85rem", ".75rem"],
+              py: [".75rem", ".5rem"],
               border: "1px solid",
               borderColor:
                 isCurrent || isNext ? "primary" : isDark ? "#3a2725" : "#eee",
@@ -205,9 +208,9 @@ export const CompactAgenda: React.FC<{
             <Text
               sx={{
                 fontFamily: "heading",
-                fontSize: "1.2rem",
+                fontSize: ["1.25rem", "1.2rem"],
                 fontWeight: "heading",
-                lineHeight: 1,
+                lineHeight: 1.1,
                 color: isCurrent ? "white" : "primary",
                 whiteSpace: "nowrap",
                 gridColumn: 1,
@@ -220,8 +223,8 @@ export const CompactAgenda: React.FC<{
             <Box
               sx={{
                 minWidth: 0,
-                gridColumn: "2 / span 2",
-                gridRow: "1 / span 2",
+                gridColumn: ["1 / -1", "2 / span 2"],
+                gridRow: [2, "1 / span 2"],
                 textAlign: "left",
               }}
             >
@@ -229,9 +232,9 @@ export const CompactAgenda: React.FC<{
                 <Text
                   sx={{
                     display: "block",
-                    pr: isCurrent || isNext ? "4.1rem" : 0,
-                    fontSize: "1.1rem",
-                    lineHeight: 1,
+                    pr: [0, isCurrent || isNext ? "4.1rem" : 0],
+                    fontSize: ["1.1rem", "1.1rem"],
+                    lineHeight: 1.2,
                     opacity: isCurrent ? 0.92 : 0.72,
                     overflowWrap: "anywhere",
                   }}
@@ -245,9 +248,9 @@ export const CompactAgenda: React.FC<{
                   display: "block",
                   mt: speakers ? ".2rem" : 0,
                   fontFamily: "heading",
-                  fontSize: ["1.15rem", "1.3rem"],
+                  fontSize: ["1.35rem", "1.3rem"],
                   fontWeight: "heading",
-                  lineHeight: 1.15,
+                  lineHeight: [1.22, 1.15],
                   overflowWrap: "anywhere",
                 }}
               >
@@ -259,7 +262,7 @@ export const CompactAgenda: React.FC<{
               sx={{
                 alignItems: "center",
                 justifyContent: "center",
-                minWidth: "3.5rem",
+                minWidth: ["3rem", "3.5rem"],
                 gridColumn: 3,
                 gridRow: 1,
               }}
@@ -273,7 +276,7 @@ export const CompactAgenda: React.FC<{
                     backgroundColor: isCurrent ? "white" : "primary",
                     color: isCurrent ? "primary" : "white",
                     fontFamily: "heading",
-                    fontSize: ".9rem",
+                    fontSize: [".85rem", ".9rem"],
                     fontWeight: "heading",
                     lineHeight: 1,
                     textTransform: "uppercase",
