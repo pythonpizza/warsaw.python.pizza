@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsxImportSource theme-ui */
 import { format } from "date-fns";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Box, Flex, Text, jsx } from "theme-ui";
 
 import type { Event } from "~/data/schedule";
@@ -16,6 +16,8 @@ type ReferenceTime = {
   isFixed: boolean;
   time: Date | null;
 };
+
+export type ColorMode = "light" | "dark";
 
 const getStartTime = (event: Event) =>
   event.when ? new Date(event.when).getTime() : Number.POSITIVE_INFINITY;
@@ -79,9 +81,12 @@ const getSpeakers = (event: Event) =>
     .filter(Boolean)
     .join(", ");
 
-export const CompactAgenda: React.FC<{ schedule: Event[] }> = ({
-  schedule,
-}) => {
+export const CompactAgenda: React.FC<{
+  schedule: Event[];
+  colorMode?: ColorMode;
+}> = ({ schedule, colorMode = "light" }) => {
+  const agendaItemRefs = useRef<(HTMLElement | null)[]>([]);
+  const hasScrolledToHighlight = useRef(false);
   const [reference, setReference] = useState<ReferenceTime>({
     isFixed: false,
     time: null,
@@ -123,6 +128,25 @@ export const CompactAgenda: React.FC<{ schedule: Event[] }> = ({
     [schedule, reference.time],
   );
 
+  useEffect(() => {
+    if (hasScrolledToHighlight.current || !reference.time) {
+      return;
+    }
+
+    const highlightedIndex = highlight.currentIndex ?? highlight.nextIndex;
+
+    if (highlightedIndex === null) {
+      return;
+    }
+
+    hasScrolledToHighlight.current = true;
+    window.requestAnimationFrame(() => {
+      agendaItemRefs.current[highlightedIndex]?.scrollIntoView({
+        block: "center",
+      });
+    });
+  }, [highlight.currentIndex, highlight.nextIndex, reference.time]);
+
   return (
     <Box
       as="ol"
@@ -138,11 +162,15 @@ export const CompactAgenda: React.FC<{ schedule: Event[] }> = ({
         const isCurrent = highlight.currentIndex === index;
         const isNext = highlight.nextIndex === index;
         const speakers = getSpeakers(event);
+        const isDark = colorMode === "dark";
 
         return (
           <Box
             as="li"
             key={`${event.when}-${getTitle(event)}`}
+            ref={(element) => {
+              agendaItemRefs.current[index] = element;
+            }}
             sx={{
               display: "grid",
               gridTemplateColumns: "4.2rem minmax(0, 1fr) auto",
@@ -154,17 +182,24 @@ export const CompactAgenda: React.FC<{ schedule: Event[] }> = ({
               px: ".75rem",
               py: ".5rem",
               border: "1px solid",
-              borderColor: isCurrent || isNext ? "primary" : "#eee",
+              borderColor:
+                isCurrent || isNext ? "primary" : isDark ? "#3a2725" : "#eee",
               borderRadius: ".8rem",
               backgroundColor: isCurrent
                 ? "primary"
                 : isNext
-                  ? "#fff4f2"
-                  : "white",
+                  ? isDark
+                    ? "#2c1d1b"
+                    : "#fff4f2"
+                  : isDark
+                    ? "#201817"
+                    : "white",
               boxShadow: isCurrent
-                ? "0 .8rem 2.4rem -1.6rem rgba(237, 67, 55, .75)"
+                ? `0 .8rem 2.4rem -1.6rem rgba(237, 67, 55, ${
+                    isDark ? ".9" : ".75"
+                  })`
                 : undefined,
-              color: isCurrent ? "white" : "text",
+              color: isCurrent ? "white" : isDark ? "#f8ebe8" : "text",
             }}
           >
             <Text
